@@ -1,9 +1,19 @@
 from itertools import product
-n = 30000
+import math
 
-for h in range(0, n):
-    for s in range(h, n):
-        s2 = s*s
-        h2 = h*h
-        if 9*s2 == (s2-h2)*h2:
-            print(s, h)
+# Anzahl, 3 beliebige Punkte zu wählen, davon die abziehen, die auf einer Linie sind
+print(math.comb(21, 3) - 2*math.comb(11,3))
+
+limit = 1000
+
+count = 0
+for n in range(-limit, limit):
+    for m in range(-limit, limit):
+        if m**4 + 8*n**2 + 350 == n**4 + 42*m**2 - 75:
+            print(m,n)
+            count += 1
+print(count)
+
+
+
+# 1000;16
